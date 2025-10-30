@@ -1,0 +1,57 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "install",
+      "type": "shell",
+      "command": "npm install",
+      "problemMatcher": []
+    },
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "npm run build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "npm run test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "test:watch",
+      "type": "shell",
+      "command": "npm run test:watch",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "lint",
+      "type": "shell",
+      "command": "npm run lint",
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "format",
+      "type": "shell",
+      "command": "npm run format",
+      "problemMatcher": []
+    },
+    {
+      "label": "typecheck",
+      "type": "shell",
+      "command": "npm run typecheck",
+      "problemMatcher": ["$tsc"]
+    }
+  ]
+}
+
