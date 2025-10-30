@@ -4,6 +4,7 @@
         "target": "ES2023",
         "lib": ["ES2023", "DOM"],
         "types": ["vite/client"],
+        "moduleResolution": "bundler",
 
         /* Linting */
         "strict": true,
