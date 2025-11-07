@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 
@@ -13,7 +13,7 @@ export default defineConfig({
             entry: resolve(__dirname, 'src/index.ts'),
             name: 'LibraTemplate',
             formats: ['es', 'cjs', 'umd'],
-            fileName: (format) => {
+            fileName: (format: string) => {
                 if (format === 'es') return 'index.esm.js'
                 if (format === 'cjs') return 'index.js'
                 return `index.${format}.js`
@@ -36,13 +36,5 @@ export default defineConfig({
             insertTypesEntry: true, // 自动生成 types entry
             rollupTypes: true // 打包时生成类型文件
         })
-    ],
-    test: {
-        globals: true,
-        environment: 'jsdom',
-        coverage: {
-            provider: 'v8',
-            reporter: ['text', 'json', 'html']
-        }
-    }
+    ]
 })
