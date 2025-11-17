@@ -6,7 +6,6 @@
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
-    "packageManager": "pnpm@8.15.0",
     "engines": {
         "node": ">=22.0.0",
         "npm": ">=9.0.0",
@@ -19,7 +18,6 @@
         "LICENSE"
     ],
     "scripts": {
-        "preinstall": "node scripts/preinstall.js",
         "dev": "vite",
         "build": "tsc && vite build",
         "lint": "eslint src --ext .ts",
@@ -30,7 +28,7 @@
         "test:watch": "vitest",
         "test:coverage": "vitest run --coverage",
         "typecheck": "tsc --noEmit",
-        "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build",
+        "prepublishOnly": "npm run lint && npm run test && npm run build",
         "prepare": "husky"
     },
     "keywords": [
@@ -51,9 +49,9 @@
     "sideEffects": false,
     "exports": {
         ".": {
+            "types": "./dist/index.d.ts",
             "import": "./dist/index.esm.js",
-            "require": "./dist/index.js",
-            "types": "./dist/index.d.ts"
+            "require": "./dist/index.js"
         }
     },
     "publishConfig": {
